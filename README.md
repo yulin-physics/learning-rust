@@ -1,57 +1,61 @@
-## [Run a code snippet in Rust](hello_world)
+## [Run a Code Snippet in Rust](hello_world)
 
 Make the file:
 
 ```
-touch hello.rs
+touch [file-name].rs
 ```
 
-Compile code:
+Compile the file:
 
 ```
-rustc hello.rs
+rustc [file-name].rs
 ```
 
 Run compiled binary:
 
 ```
-./hello
+./[file-name]
 ```
 
 ## [Build a Project in Rust](sample_code)
 
-1. Initialise project with cargo
-   To initialise in a folder:
+1. Initialise project with cargo 
 
-```
-cargo new [folder-name]
-```
+    To initialise in a folder:
 
-To initialise in current folder:
+    ```
+    cargo new [folder-name]
+    ```
 
-```
-cargo init
-```
+    To initialise in current folder:
 
-2. Compile and run
+    ```
+    cargo init
+    ```
 
-```
-cargo run
-```
+2. Compile and run  
 
-The executable is located in `./target/debug`
+    ```
+    cargo run
+    ```
 
-To build only you run the following command:
+    The executable is located in `./target/debug`
 
-```
-cargo build
-```
+    To build only run the following command:
 
-To build for production
+    ```
+    cargo build
+    ```
 
-```
-cargo build --release
-```
+    To build for production:
+
+    ```
+    cargo build --release
+    ```
+<a href="https://www.youtube.com/watch?v=zF34dRivLOw"> Rust Crash Course</a>
+
+<a href="https://doc.rust-lang.org/book/ch20-00-final-project-a-web-server.html">Building a Multithread Webserver</a>
 
 ## Recommended Visual Studio Code Extensions
 
@@ -61,3 +65,5 @@ cargo build --release
 ### TOML
 
 ### <a href="https://developer.mozilla.org/en-US/docs/WebAssembly/Rust_to_wasm">WebAssembly</a>
+
+
