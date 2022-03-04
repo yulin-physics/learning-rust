@@ -57,6 +57,14 @@ Run compiled binary:
 
 <a href="https://doc.rust-lang.org/book/ch20-00-final-project-a-web-server.html">Building a Multithread Webserver</a>
 
+Use Compiler Driven Development:
+```
+cargo check
+```
+See Generated Documentation:
+```
+cargo doc --open 
+```
 ## Recommended Visual Studio Code Extensions
 
 - Rust Analyzer
@@ -66,4 +74,4 @@ Run compiled binary:
 
 ### <a href="https://developer.mozilla.org/en-US/docs/WebAssembly/Rust_to_wasm">WebAssembly</a>
 
-
+fork/join model and the single-threaded async I/O model
