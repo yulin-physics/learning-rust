@@ -36,23 +36,23 @@ Run compiled binary:
 
 2.  Compile and run
 
-        ```
-        cargo run
-        ```
+    ```
+    cargo run
+    ```
 
-        The executable is located in `./target/debug`
+    The executable is located in `./target/debug`
 
-        To build only run the following command:
+    To build only run the following command:
 
-        ```
-        cargo build
-        ```
+    ```
+    cargo build
+    ```
 
-        To build for production:
+    To build for production:
 
-        ```
-        cargo build --release
-        ```
+    ```
+    cargo build --release
+    ```
 
     <a href="https://www.youtube.com/watch?v=zF34dRivLOw"> Rust Crash Course</a>
 

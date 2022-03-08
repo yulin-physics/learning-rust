@@ -10,17 +10,25 @@
 // Tuple struct
 struct Color(u8, u8, u8);
 
-struct Person {
+// Unit like struct
+struct AlwaysEqual;
+// Unit-like structs can be useful when you need to implement a trait on some type but don’t have any data that you want to store in the type itself. 
+
+struct User {
     first_name: String,
     last_name: String,
+    active: bool,
+    sign_in_count: u64,
 }
 
-impl Person {
-    // Construct person
-    fn new(first: &str, last: &str) -> Person {
-        Person {
+impl User {
+    // Construct
+    fn new(first: &str, last: &str) -> User {
+        User {
             first_name: first.to_string(),
             last_name: last.to_string(),
+            active: true,
+            sign_in_count: 1,
         }
     }
 
@@ -54,8 +62,13 @@ pub fn run() {
     c.0 = 200;
     println!("Color: {} {} {}", c.0, c.1, c.2);
 
-    let mut p = Person::new("John", "Doe");
+    let mut p = User::new("John", "Doe");
+    let struct_update_syntax = User {
+        first_name: String::from("first"),
+        last_name: String::from("last"),
+        ..p
+    };
     p.set_last_name("Mary");
-    println!("Person {}", p.full_name());
-    println!("Person Tuple {:?}", p.to_tuple())
+    println!(" User{}", p.full_name());
+    println!(" UserTuple {:?}", p.to_tuple())
 }

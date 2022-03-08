@@ -1,1 +1,0 @@
-/Users/yulinchen/projects/scratch/rust_practice/sample_code/target/debug/sample_code: /Users/yulinchen/projects/scratch/rust_practice/sample_code/src/cli.rs /Users/yulinchen/projects/scratch/rust_practice/sample_code/src/main.rs

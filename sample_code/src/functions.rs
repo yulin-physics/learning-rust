@@ -11,6 +11,9 @@ pub fn run() {
     println!("Closure sum: {}", add_nums(3, 3))
 }
 
+// Statements are instructions that perform some action and do not return a value. Expressions evaluate to a resulting value.
+
+// Calling a function is an expression. Calling a macro is an expression. 
 fn greeting(greet: &str, name: &str) {
     println!("{} {}, nice to meet you!", greet, name)
 }

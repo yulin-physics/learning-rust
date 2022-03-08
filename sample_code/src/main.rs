@@ -1,6 +1,6 @@
-mod cli;
+mod structs;
 
 // crate::module:item
 fn main() {
-    cli::run();
+    structs::run();
 }
