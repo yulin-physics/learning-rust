@@ -1,3 +1,4 @@
+#![allow(unused)]
 // debug is a derivable trait - explicitly opt in to make that debug trait {:?} available for our struct.
 #[derive(Debug)]
 struct Rectangle {
@@ -21,6 +22,7 @@ impl Rectangle {
         self.height > other.height && self.width > other.width
     }
 }
+
 fn main() {
     let rect1 = Rectangle {
         width: 30,

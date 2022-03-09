@@ -1,4 +1,5 @@
 mod ints;
+mod pig_latin;
 
 fn main() {
     println!("=== Find Median of Integers ===");
@@ -9,6 +10,8 @@ fn main() {
     println!("=== Find Mode of Integers ===");
     let mode = ints::find_mode(&numbers);
     println!("mode of {:?} is {}", numbers, mode);
-}
 
-fn pig_latin_converter() {}
+    println!("=== Pig Latin ===");
+    let word = "Friday";
+    println!("Pig latin of {} is {}", word, pig_latin::convert(word));
+}

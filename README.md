@@ -1,6 +1,6 @@
 # Rust Code Snippets Collection
 
-## [Run a Code Snippet in Rust](hello_world)
+## [Run a file in Rust](01_getting_started)
 
 Make the file:
 
@@ -20,7 +20,7 @@ Run compiled binary:
 ./[file-name]
 ```
 
-## [Build a Project in Rust](sample_code)
+## Build a Project in Rust
 
 1.  Create a package
 
