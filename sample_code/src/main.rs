@@ -1,6 +1,6 @@
-mod structs;
+mod enums;
 
 // crate::module:item
 fn main() {
-    structs::run();
+    enums::run();
 }

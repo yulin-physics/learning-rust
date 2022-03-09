@@ -20,7 +20,7 @@ Run compiled binary:
 
 ## [Build a Project in Rust](sample_code)
 
-1.  Initialise project with cargo
+1.  Create a package
 
     To initialise in a folder (`--vcs=none` flag overrides cargo default of initialising a new Git repository along with a .gitignore file):
 
@@ -33,6 +33,11 @@ Run compiled binary:
     ```
     cargo init
     ```
+
+    - `src/main.rs` is the crate root of a binary crate
+    - `src/lib.rs` is the crate root of a library crate (to create a new library, add '--lib' flag to 'cargo new')
+
+    both with the same name as the package. A package can have multiple binary crates by placing files in the src/bin directory: each file will be a separate binary crate.
 
 2.  Compile and run
 
