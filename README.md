@@ -1,3 +1,5 @@
+# Rust Code Snippets Collection
+
 ## [Run a Code Snippet in Rust](hello_world)
 
 Make the file:
@@ -59,10 +61,6 @@ Run compiled binary:
     cargo build --release
     ```
 
-    <a href="https://www.youtube.com/watch?v=zF34dRivLOw"> Rust Crash Course</a>
-
-<a href="https://doc.rust-lang.org/book/ch20-00-final-project-a-web-server.html">Building a Multithread Webserver</a>
-
 Use Compiler Driven Development:
 
 ```
@@ -79,6 +77,12 @@ cargo doc --open
 
 - Rust Analyzer
 - Better TOML
+
+## Learning Resources
+
+- <a href="https://doc.rust-lang.org/book/title-page.html">Rust Book</a>
+
+- <a href="https://www.youtube.com/watch?v=zF34dRivLOw"> Rust Crash Course</a>
 
 ### TOML
 

@@ -2,7 +2,16 @@
 
 use std::mem;
 
+enum SpreadsheetCell {
+    Int(i32),
+    Float(f64),
+    Text(String),
+}
+
 pub fn run() {
+    // new empty vector
+    let v: Vec<i32> = Vec::new();
+    // use vec! macro, and mut keyword to allow push
     let mut numbers: Vec<i32> = vec![1, 2, 3, 4, 5];
 
     // Re-assign value
@@ -20,9 +29,17 @@ pub fn run() {
         println!("Number: {}", x);
     }
 
+    for i in &numbers {
+        println!("Number: {}", i);
+    }
+
     // Loop and mutate values
     for x in numbers.iter_mut() {
         *x *= 2;
+    }
+
+    for i in &mut numbers {
+        *i *= 2;
     }
     println!("Numbers Vec after mut: {:?}", numbers);
 
@@ -34,7 +51,19 @@ pub fn run() {
     println!("{:?}", numbers);
     println!("String val: {}", numbers[0]);
 
-    // Get slice
-    let slice: &[i32] = &numbers[0..2];
-    println!("Slice: {:?}", slice)
+    // Get slice - &[T]
+    let slice: &[i32] = &numbers[2];
+    println!("Slice: {:?}", slice);
+
+    // Get value - <&T>
+    match numbers.get(2) {
+        some(slice) => println!("the third element is {}", slice),
+        None => println!("there is no third element"),
+    }
+
+    let row = vec![
+        SpreadsheetCell::Int(3),
+        SpreadsheetCell::Text(String::from("name")),
+        SpreadsheetCell::Float(3.6),
+    ];
 }

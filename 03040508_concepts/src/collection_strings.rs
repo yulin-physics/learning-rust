@@ -1,11 +1,18 @@
 // Primitive string = Immutable fixed-length string somewhere in memory.
 // String = Growable, heap allocated data structure
+
+// A String is a wrapper over a Vec<u8>
+// three relevant ways to look at strings from Rust’s perspective: as bytes, unicode scalar values (char), and grapheme clusters (the closest thing to what we would call letters).
+
 pub fn run() {
     // Primitive string
     let hello = "Hello";
 
     // String
     let mut hi = String::from("Hello ");
+    let s = "Hello ".to_string();
+    let mut s = String::new();
+
     // Push char
     hi.push('W');
     // Push string
@@ -39,4 +46,12 @@ pub fn run() {
 
     // Assertion testing
     assert_eq!(2, s.len());
+
+    //concatenate strings
+    let s = format!("{}-{}-{}", hi, s, hi);
+
+    // iterating over strings
+    for i in hello.chars() {
+        println!("{}", i);
+    }
 }

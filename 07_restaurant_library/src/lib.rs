@@ -2,6 +2,8 @@
 
 // nest path:
 // use std::{cmp::Ordering, io};
+#![allow(unused)]
+
 mod front_of_house;
 mod back_of_house {
     fn fix_incorrect_order() {
