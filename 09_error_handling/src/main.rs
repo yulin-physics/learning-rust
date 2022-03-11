@@ -1,6 +1,6 @@
+#![allow(unused)]
 // Result<T, E> for recoverable errors
 // panic! macro for unrecoverable error, stops execution
-
 use std::error::Error;
 use std::fs::File;
 use std::io::{self, ErrorKind, Read};
