@@ -73,6 +73,44 @@ See Generated Documentation:
 cargo doc --open
 ```
 
+## [Run Tests](11_automated_tests)
+
+`cargo test` compiles your code in test mode and runs the resulting test binary. Tests are run in parallel by default:
+
+```
+cargo test
+```
+
+Run tests consecutively using `--test-threads` flag:
+
+```
+cargo test -- --test-threads=1
+```
+
+Show printed values from the tested functions regardless of success or failure:
+
+```
+cargo test -- --show-output
+```
+
+Run `#[ignore]` tests:
+
+```
+cargo test -- --ignored
+```
+
+Run all tests including `#[ignore]`:
+
+```
+cargo test -- --include-ignored
+```
+
+Run a particular integration test crate in `tests/`:
+
+```
+cargo test --test test_file_name
+```
+
 ## Recommended Visual Studio Code Extensions
 
 - Rust Analyzer
