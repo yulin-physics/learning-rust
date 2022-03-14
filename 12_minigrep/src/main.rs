@@ -6,9 +6,7 @@ use std::{env, process};
 
 // main function - setting up configuration or handling errors.
 fn main() {
-    let args: Vec<String> = env::args().collect();
-
-    let config = Config::new(&args).unwrap_or_else(|e| {
+    let config = Config::new(env::args()).unwrap_or_else(|e| {
         // print to standard error stream
         eprintln!("Problem parsing arguments: {}", e);
         process::exit(1);
