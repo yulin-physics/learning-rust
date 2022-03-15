@@ -127,3 +127,5 @@ cargo test --test test_file_name
 ### <a href="https://developer.mozilla.org/en-US/docs/WebAssembly/Rust_to_wasm">WebAssembly</a>
 
 fork/join model and the single-threaded async I/O model
+
+Halting Problem
