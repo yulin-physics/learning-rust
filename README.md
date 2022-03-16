@@ -118,9 +118,10 @@ cargo test --test test_file_name
 
 ## Learning Resources
 
-- <a href="https://doc.rust-lang.org/book/title-page.html">Rust Book</a>
+- <a href="https://doc.rust-lang.org/book/title-page.html"> The Rust Programming Language Book</a>
 
 - <a href="https://www.youtube.com/watch?v=zF34dRivLOw"> Rust Crash Course</a>
+- <a href="https://doc.rust-lang.org/nomicon/intro.html"> The Rustonomicon </a>
 
 ### TOML
 
@@ -129,3 +130,5 @@ cargo test --test test_file_name
 fork/join model and the single-threaded async I/O model
 
 Halting Problem
+
+Deadlcoks

@@ -1,4 +1,6 @@
-// Using Message Passing to Transfer Data Between Threads
+// Using Message Passing to Transfer Data Between Threads instead of share memory
+
+// Similar to single ownership, can't use value once passed down thread
 use std::sync::mpsc;
 use std::thread;
 use std::time::Duration;

@@ -5,10 +5,10 @@
 
 use std::thread;
 use std::time::Duration;
-mod channels;
+mod mutex;
 
 fn main() {
-    channels::run();
+    mutex::run();
 }
 
 fn move_closures(){
