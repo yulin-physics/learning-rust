@@ -8,12 +8,16 @@ struct Rectangle {
 
 impl Rectangle {
     // Associated functions that is not a method (does not take &self and don’t need an instance of the type to work with)
+    // accessed using path
     fn square(size: u32) -> Rectangle {
         Rectangle {
             width: size,
             height: size,
         }
     }
+
+    // Associated functions whose first parameter is named self are called methods
+    // accessed using dot
     fn area(&self) -> u32 {
         self.width * self.height
     }

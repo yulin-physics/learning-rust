@@ -122,6 +122,7 @@ cargo test --test test_file_name
 - <a href="https://www.youtube.com/watch?v=zF34dRivLOw"> Rust Crash Course</a>
 - <a href="https://doc.rust-lang.org/nomicon/intro.html"> The Rustonomicon </a>
 - <a href="https://doc.rust-lang.org/reference/introduction.html"> The Rust Reference </a>
+- <a href="https://veykril.github.io/tlborm/"> The Little Book of Rust Macros</a>
 
 ### TOML
 
