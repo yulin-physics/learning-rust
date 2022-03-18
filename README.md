@@ -1,6 +1,12 @@
 # Rust Code Snippets Collection
 
-## [Run a file in Rust](01_getting_started)
+- [Run a File in Rust](#run-a-file-in-rust)
+- [Build a Project in Rust](#build-a-project-in-rust)
+- [Run Tests in Rust](#run-tests-in-rust)
+- [Recommended VS Code Extensions](#recommended-visual-studio-code-extensions)
+- [Learning Resources](#learning-resources)
+
+## [Run a File in Rust](01_getting_started)
 
 Make the file:
 
@@ -73,7 +79,7 @@ See Generated Documentation:
 cargo doc --open
 ```
 
-## [Run Tests](11_automated_tests)
+## [Run Tests in Rust](11_automated_tests)
 
 `cargo test` compiles your code in test mode and runs the resulting test binary. Tests are run in parallel by default:
 
@@ -123,17 +129,12 @@ cargo test --test test_file_name
 - <a href="https://doc.rust-lang.org/nomicon/intro.html"> The Rustonomicon </a>
 - <a href="https://doc.rust-lang.org/reference/introduction.html"> The Rust Reference </a>
 - <a href="https://veykril.github.io/tlborm/"> The Little Book of Rust Macros</a>
+- <a href="https://developer.mozilla.org/en-US/docs/WebAssembly/Rust_to_wasm">WebAssembly</a>
 
-### TOML
-
-### <a href="https://developer.mozilla.org/en-US/docs/WebAssembly/Rust_to_wasm">WebAssembly</a>
+[Memory Safety Explained](memory/README.md)
 
 To improve the throughput of a web server:
 
 - Thread Pool
 - Fork/Join model
 - Single-threaded async I/O model
-
-Halting Problem
-
-Deadlcoks
