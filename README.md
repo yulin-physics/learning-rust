@@ -6,6 +6,19 @@
 - [Recommended VS Code Extensions](#recommended-visual-studio-code-extensions)
 - [Learning Resources](#learning-resources)
 
+## Why Rust?
+
+Multiple concurrent Rust toolchains can be installed and managed via <a href="https://rustup.rs/">rustup</a>. Rust installations come with Cargo, a command line tool to manage dependencies, run tests, generate documentation, and more.
+Rust was built with safety, speed, and efficiency.
+
+- Compile time memory checks
+
+  Memory Safety through ownership and borrowing (variables immutable by default)
+
+- Catching bugs at compile time
+- Low level control
+- Zero-cost abstractions (Fluent Builder Pattern)
+
 ## [Run a File in Rust](01_getting_started)
 
 Make the file:
