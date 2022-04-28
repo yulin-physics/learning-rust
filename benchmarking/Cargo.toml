@@ -1,0 +1,15 @@
+[package]
+name = "benchmarking"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+rand = "0.8.5"
+criterion = "0.3"
+
+[[bench]]
+name = "insertion_sort_benchmark"
+harness = false
+path = "src/sorter/insertion_sort_benchmark.rs"

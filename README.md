@@ -3,6 +3,7 @@
 - [Run a File in Rust](#run-a-file-in-rust)
 - [Build a Project in Rust](#build-a-project-in-rust)
 - [Run Tests in Rust](#run-tests-in-rust)
+- [Benchmarking in Rust](#benchmarking-in-rust)
 - [Recommended VS Code Extensions](#recommended-visual-studio-code-extensions)
 - [Learning Resources](#learning-resources)
 
@@ -112,6 +113,14 @@ Show printed values from the tested functions regardless of success or failure:
 cargo test -- --show-output
 ```
 
+or
+
+```
+cargo test -- --nocapture
+```
+
+Rust test programs hide the stdout of successful tests in order for the test output to be tidy.
+
 Run `#[ignore]` tests:
 
 ```
@@ -128,6 +137,26 @@ Run a particular integration test crate in `tests/`:
 
 ```
 cargo test --test test_file_name
+```
+
+## [Benchmarking in Rust](benchmarking)
+
+Install [Criterion](https://github.com/bheisler/criterion.rs) as dependency
+
+Read about [Cargo Modules](https://betterprogramming.pub/explaining-rusts-modules-420d38eed6c5)
+
+Read about [cfg marcos](https://doc.rust-lang.org/rust-by-example/attribute/cfg.html)
+
+For a single benchmark file:
+
+```
+cargo bench
+```
+
+For multiple benchmark files:
+
+```
+cargo bench --bench [benchmark name]
 ```
 
 ## Recommended Visual Studio Code Extensions
