@@ -3,6 +3,7 @@
 - [Run a File in Rust](#run-a-file-in-rust)
 - [Build a Project in Rust](#build-a-project-in-rust)
 - [Run Tests in Rust](#run-tests-in-rust)
+- [Benchmarking in Rust](#benchmarking-in-rust)
 - [Recommended VS Code Extensions](#recommended-visual-studio-code-extensions)
 - [Learning Resources](#learning-resources)
 
@@ -137,6 +138,10 @@ Run a particular integration test crate in `tests/`:
 ```
 cargo test --test test_file_name
 ```
+
+## [Benchmarking in Rust](benchmarking)
+
+Install [Criterion](https://github.com/bheisler/criterion.rs)
 
 ## Recommended Visual Studio Code Extensions
 
