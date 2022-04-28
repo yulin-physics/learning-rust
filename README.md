@@ -112,6 +112,14 @@ Show printed values from the tested functions regardless of success or failure:
 cargo test -- --show-output
 ```
 
+or
+
+```
+cargo test -- --nocapture
+```
+
+Rust test programs hide the stdout of successful tests in order for the test output to be tidy.
+
 Run `#[ignore]` tests:
 
 ```
