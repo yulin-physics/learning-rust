@@ -12,4 +12,4 @@ criterion = "0.3"
 [[bench]]
 name = "insertion_sort_benchmark"
 harness = false
-path = "src/benches/insertion_sort_benchmark.rs"
+path = "src/sorter/insertion_sort_benchmark.rs"

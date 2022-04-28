@@ -141,7 +141,23 @@ cargo test --test test_file_name
 
 ## [Benchmarking in Rust](benchmarking)
 
-Install [Criterion](https://github.com/bheisler/criterion.rs)
+Install [Criterion](https://github.com/bheisler/criterion.rs) as dependency
+
+Read about [Cargo Modules](https://betterprogramming.pub/explaining-rusts-modules-420d38eed6c5)
+
+Read about [cfg marcos](https://doc.rust-lang.org/rust-by-example/attribute/cfg.html)
+
+For a single benchmark file:
+
+```
+cargo bench
+```
+
+For multiple benchmark files:
+
+```
+cargo bench --bench [benchmark name]
+```
 
 ## Recommended Visual Studio Code Extensions
 
