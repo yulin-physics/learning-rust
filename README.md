@@ -18,7 +18,24 @@ Rust was built with safety, speed, and efficiency (productivity and control).
 
 - Catching bugs at compile time and ridiculously helpful compiler errors
 - Best of two worlds from systems programming and functional/higher-order programming: Low level control and abstraction when required
-- Zero-cost abstractions (Fluent Builder Pattern)
+  Zero-cost abstractions (Fluent Builder Pattern)
+
+- Control over memory access, memory layout and specific CPU instructions, for example, semantics for creating integers:
+
+```
+// An integer on the stack
+let a = 10;
+// Boxed integer: An integer on the heap
+let b = Box::new(20);
+// A boxed integer wrapped within a reference counter
+let c = Rc::new(Box::new(30));
+// An integer protected by a mutual exlusion lock, wrapped in an atomic reference counter
+let d = Arc::new(Mutex::new(40));
+```
+
+- Reliable language: Code written will always compile with a future Rust compiler
+
+Rust is slower at compiling code than its peer languages, not free from logic errors.
 
 ## [Run a File in Rust](01_getting_started)
 
