@@ -1,5 +1,7 @@
 # Rust Code Snippets Collection
 
+Empowering everyone to build reliable and efficient software
+
 - [Run a File in Rust](#run-a-file-in-rust)
 - [Build a Project in Rust](#build-a-project-in-rust)
 - [Run Tests in Rust](#run-tests-in-rust)
@@ -10,14 +12,12 @@
 ## Why Rust?
 
 Multiple concurrent Rust toolchains can be installed and managed via <a href="https://rustup.rs/">rustup</a>. Rust installations come with Cargo, a command line tool to manage dependencies, run tests, generate documentation, and more.
-Rust was built with safety, speed, and efficiency.
+Rust was built with safety, speed, and efficiency (productivity and control).
 
-- Compile time memory checks
+- Compile time memory checks, guuarantees memory safety with no run time costs through ownership and borrowing (variables immutable by default)
 
-  Memory Safety through ownership and borrowing (variables immutable by default)
-
-- Catching bugs at compile time
-- Low level control
+- Catching bugs at compile time and ridiculously helpful compiler errors
+- Best of two worlds from systems programming and functional/higher-order programming: Low level control and abstraction when required
 - Zero-cost abstractions (Fluent Builder Pattern)
 
 ## [Run a File in Rust](01_getting_started)
