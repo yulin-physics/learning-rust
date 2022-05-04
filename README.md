@@ -189,6 +189,7 @@ cargo bench --bench [benchmark name]
 - <a href="https://doc.rust-lang.org/reference/introduction.html"> The Rust Reference </a>
 - <a href="https://veykril.github.io/tlborm/"> The Little Book of Rust Macros</a>
 - <a href="https://developer.mozilla.org/en-US/docs/WebAssembly/Rust_to_wasm">WebAssembly</a>
+- <a href="https://github.com/rust-lang/rustlings">Rustlings - Small exercises</a>
 
 [Memory Safety Explained](memory/README.md)
 
