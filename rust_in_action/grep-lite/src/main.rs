@@ -1,8 +1,28 @@
-mod numeric_literals;
+/// cargo run -- "pattern"
+///
+///
+// look outside of the standard library for this crate
+extern crate clap;
+extern crate regex;
+// bring into local scope
+use clap::{App, Arg};
+use regex::Regex;
 
 fn main() {
+    let args = App::new("grep-lite")
+        .version("0.1")
+        .about("searches for patterns")
+        .arg(
+            Arg::with_name("pattern")
+                .help("The pattern to search for")
+                .takes_value(true)
+                .required(true),
+        )
+        .get_matches();
+
+    let pattern = args.value_of("pattern").unwrap();
     let context_lines = 2;
-    let search_term = "picture";
+    let search_term = Regex::new(pattern).unwrap();
     let quote = "
     every day is a
     new
@@ -20,11 +40,14 @@ fn main() {
     let mut ctx: Vec<Vec<(usize, String)>> = Vec::new();
 
     for (idx, line) in quote.lines().enumerate() {
-        if line.contains(search_term) {
-            tags.push(idx);
+        match search_term.find(line) {
+            Some(_) => {
+                tags.push(idx);
 
-            let v = Vec::with_capacity(1 + 2 * context_lines);
-            ctx.push(v);
+                let v = Vec::with_capacity(1 + 2 * context_lines);
+                ctx.push(v);
+            }
+            None => (),
         }
     }
 

@@ -6,6 +6,7 @@ Empowering everyone to build reliable and efficient software
 - [Build a Project in Rust](#build-a-project-in-rust)
 - [Run Tests in Rust](#run-tests-in-rust)
 - [Benchmarking in Rust](#benchmarking-in-rust)
+- [Generating Crate Documentation Locally](#generating-documentation-locally)
 - [Recommended VS Code Extensions](#recommended-visual-studio-code-extensions)
 - [Learning Resources](#learning-resources)
 
@@ -36,6 +37,13 @@ let d = Arc::new(Mutex::new(40));
 - Reliable language: Code written will always compile with a future Rust compiler
 
 Rust is slower at compiling code than its peer languages, not free from logic errors.
+
+---
+
+### Command Line Tool
+
+`rustup` manages Rust toolchains and move between versions of the compiler.
+`cargo` manages projects.
 
 ## [Run a File in Rust](01_getting_started)
 
@@ -124,6 +132,8 @@ Run tests consecutively using `--test-threads` flag:
 cargo test -- --test-threads=1
 ```
 
+Any arguments appearing after -- are sent through to the result of the build.
+
 Show printed values from the tested functions regardless of success or failure:
 
 ```
@@ -174,6 +184,26 @@ For multiple benchmark files:
 
 ```
 cargo bench --bench [benchmark name]
+```
+
+## Generating Documentation Locally
+
+Generating HTML documentation:
+
+```
+cargo doc
+```
+
+This crates index.html in `/target/doc/`. To open doc in web browser:
+
+```
+cargo doc --open
+```
+
+To inspect the output directory:
+
+```
+tree -d -L 1 target/doc/
 ```
 
 ## Recommended Visual Studio Code Extensions
