@@ -9,54 +9,22 @@ use clap::{App, Arg};
 use regex::Regex;
 
 use std::fs::File;
+use std::io;
 use std::io::prelude::*;
 use std::io::BufReader;
 
-fn main() {
-    let args = App::new("grep-lite")
-        .version("0.1")
-        .about("searches for patterns")
-        .arg(
-            Arg::with_name("pattern")
-                .help("The pattern to search for")
-                .takes_value(true)
-                .required(true),
-        )
-        .arg(
-            Arg::with_name("input")
-                .help("File to search")
-                .takes_value(true)
-                .required(true),
-        )
-        .get_matches();
-
-    let input = args.value_of("input").unwrap();
-    let f = File::open(input).unwrap();
-    let mut reader = BufReader::new(&f);
-
-    // let mut line = String::new();
-    // loop {
-    //     let len = reader.read_line(&mut line).unwrap();
-    //     if len == 0 {
-    //         break;
-    //     }
-
-    //     println!("{} ({} bytes long)", line, len);
-
-    //     // shrink String back to length 0, preventing lines form persisting into the following one
-    //     line.truncate(0);
-    // }
-
-    let pattern = args.value_of("pattern").unwrap();
-    let context_lines = 2;
-    let search_term = Regex::new(pattern).unwrap();
-
+fn process_lines<T: BufRead + Sized>(
+    reader: &mut T,
+    search_term: Regex,
+    context_lines: usize,
+    cache_reader: T,
+) {
     // hold line numbers of matches
     let mut tags: Vec<usize> = Vec::new();
     // hold context lines for each match
     let mut ctx: Vec<Vec<(usize, String)>> = Vec::new();
 
-    for (idx, line_) in reader.by_ref().lines().enumerate() {
+    for (idx, line_) in reader.by_ref().lines().enumerate().peekable() {
         let line = line_.unwrap();
         match search_term.find(&line) {
             Some(_) => {
@@ -72,10 +40,7 @@ fn main() {
         return;
     }
 
-    let input = args.value_of("input").unwrap();
-    let f = File::open(input).unwrap();
-    let mut reader = BufReader::new(&f);
-    for (i, line_) in reader.by_ref().lines().enumerate() {
+    for (i, line_) in cache_reader.lines().enumerate() {
         let line = line_.unwrap();
         for (j, tag) in tags.iter().enumerate() {
             // subtraction that returns 0 on integer underflow
@@ -95,5 +60,64 @@ fn main() {
             println!("{}: {}", line_num, line);
         }
     }
-    // println!("{}: {}", line_num, line);
+}
+
+fn process_stdin<T: BufRead + Sized>(reader: T, re: Regex) {
+    for line_ in reader.lines() {
+        let line = line_.unwrap();
+        match re.find(&line) {
+            Some(_) => println!("{}", line),
+            None => (),
+        }
+    }
+}
+
+fn main() {
+    let args = App::new("grep-lite")
+        .version("0.1")
+        .about("searches for patterns")
+        .arg(
+            Arg::with_name("pattern")
+                .help("The pattern to search for")
+                .takes_value(true)
+                .required(true),
+        )
+        .arg(
+            Arg::with_name("input")
+                .help("File to search")
+                .takes_value(true)
+                .required(false),
+        )
+        .get_matches();
+
+    let input = args.value_of("input").unwrap_or("-");
+
+    let pattern = args.value_of("pattern").unwrap();
+    let context_lines = 2;
+    let search_term = Regex::new(pattern).unwrap();
+
+    if input == "-" {
+        let stdin = io::stdin();
+        let reader = stdin.lock();
+        process_stdin(reader, search_term);
+    } else {
+        let f = File::open(input).unwrap();
+        let mut reader = BufReader::new(&f);
+        let f = File::open(input).unwrap();
+        let cache_reader = BufReader::new(&f);
+        process_lines(&mut reader, search_term, context_lines, cache_reader);
+    }
+
+    // let mut line = String::new();
+    // loop {
+    //     let len = reader.read_line(&mut line).unwrap();
+    //     if len == 0 {
+    //         break;
+    //     }
+
+    //     println!("{} ({} bytes long)", line, len);
+
+    //     // shrink String back to length 0, preventing lines form persisting into the following one
+    //     line.truncate(0);
+    // }
 }
