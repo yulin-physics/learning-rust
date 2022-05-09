@@ -32,4 +32,10 @@ struct File(String)
 
 Modifying a known global varibale, C programmers are used to checking the value of **errno** once system calls have been returned.
 
-Make use of Rust `Result` return type. Let functions take ownership of the argument and return in Ok(T).
+```
+static mut ERROR
+```
+
+Need to wrap static lifetime global vaiables in `unsafe` block when accessing.
+
+Alternatively, make use of Rust `Result` return type. Let functions take ownership of the argument and return in Ok(T).
