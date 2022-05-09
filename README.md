@@ -188,6 +188,16 @@ cargo bench --bench [benchmark name]
 
 ## Generating Documentation Locally
 
+### Use `rustdoc` to render docs for a single source file
+
+```
+rustdoc file.rs
+```
+
+This creates a `doc/` directory with subdirectory containing index.html.
+
+### Use `cargo` to render docs for a crate and its dependencies
+
 Generating HTML documentation:
 
 ```
