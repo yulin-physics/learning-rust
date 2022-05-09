@@ -13,3 +13,17 @@ Handle many possible input types to functions, define in function signature by c
 ## Trait bounds
 
 Add constraints to generics. A trait is analogous to an interface or protocol in other domains.
+
+## Newtype Pattern
+
+Create alias using the type keyword, the alias will have all methods form the type:
+
+```
+type File = String
+```
+
+Create distinct types by using newtype pattern, consists of wrapping a core type within a single field struct or perhaps a tuple. Compiler will treat the types differently:
+
+```
+struct File(String)
+```

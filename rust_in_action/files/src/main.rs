@@ -1,7 +1,10 @@
 #![allow(unused_variables)]
 
-// alias for String, inherits of all String methods
-type File = String;
+#[derive(Debug)]
+struct File {
+    name: String,
+    data: Vec<u8>,
+}
 
 fn open(f: &mut File) -> bool {
     true
@@ -11,14 +14,31 @@ fn close(f: &mut File) -> bool {
     true
 }
 
-// relax compiler warning about an unused function
-#[allow(dead_code)]
-fn read(f: &mut File, save_to: &mut Vec<u8>) -> ! {
-    unimplemented!()
+fn read(f: &File, save_to: &mut Vec<u8>) -> usize {
+    // make a copy here, as .append() will shrink the input
+    let mut tmp = f.data.clone();
+    let read_length = tmp.len();
+    // ensures sufficient space to fit the incoming data and minimizes allocations when data is inserted byte-by-byte
+    save_to.reserve(read_length);
+    save_to.append(&mut tmp);
+    read_length
 }
 
 fn main() {
-    let mut f1 = File::from("f1.txt");
-    // read(f1, vec![]);
-    close(&mut f1);
+    let mut f2 = File {
+        name: String::from("2.txt"),
+        data: Vec::new(),
+    };
+
+    let mut buffer: Vec<u8> = Vec::new();
+    open(&mut f2);
+    let f2_length = read(&f2, &mut buffer);
+    close(&mut f2);
+
+    // convert Vec<u8> to String
+    let text = String::from_utf8_lossy(&buffer);
+
+    println!("{:?}", f2);
+    println!("{} is {} bytes long", &f2.name, f2_length);
+    println!("{}", text);
 }
