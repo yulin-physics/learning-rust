@@ -1,10 +1,17 @@
 # Rust in Action
 
+Primitive types in Rust implement Copy trait, whereas all other types have move semantics.
+
 ## Lifetime Annotations
 
 Lifetimes provide specific information to the Rust compiler about data that lives outside a function (functions that use references). Make sure input data lives as long as the function.
 
 Lifetime elision - lifetime parameters don't need to be provided usually.
+
+## Ownership
+Two main ways to shift ownership
+- through assignment
+- through a function barrier
 
 ## Generics
 
