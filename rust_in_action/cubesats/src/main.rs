@@ -6,7 +6,6 @@ enum StatusMessage {
 #[derive(Debug)]
 struct CubeSat {
     id: u64,
-    mailbox: Mailbox,
 }
 
 #[derive(Debug)]
@@ -23,15 +22,12 @@ struct Message {
 struct GroundStation;
 
 impl GroundStation {
-    fn send(&self, to: &mut CubeSat, msg: Message) {
-        to.mailbox.messages.push(msg);
+    fn send(&self, mailbox: &mut Mailbox, msg: Message) {
+        mailbox.post(msg);
     }
 
     fn connect(&self, sat_id: u64) -> CubeSat {
-        CubeSat {
-            id: sat_id,
-            mailbox: Mailbox { messages: vec![] },
-        }
+        CubeSat { id: sat_id }
     }
 }
 
@@ -79,7 +75,7 @@ fn main() {
             to: sat_id,
             content: String::from("helllo"),
         };
-        base.send(&mut sat, msg);
+        base.send(&mut mail, msg);
     }
 
     let sat_ids = fetch_sat_ids();
