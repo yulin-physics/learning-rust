@@ -37,6 +37,22 @@ impl CubeSat {
     }
 }
 
+// impl Copy for CubeSat {}
+
+// impl Copy for StatusMessage {}
+
+// impl Clone for CubeSat {
+//     fn clone(&self) -> Self {
+//         CubeSat { id: self.id }
+//     }
+// }
+
+// impl Clone for StatusMessage {
+//     fn clone(&self) -> Self {
+//         *self
+//     }
+// }
+
 impl Mailbox {
     fn post(&mut self, msg: Message) {
         self.messages.push(msg);
@@ -70,7 +86,7 @@ fn main() {
     let sat_ids = fetch_sat_ids();
 
     for sat_id in sat_ids {
-        let mut sat = base.connect(sat_id);
+        base.connect(sat_id);
         let msg = Message {
             to: sat_id,
             content: String::from("helllo"),

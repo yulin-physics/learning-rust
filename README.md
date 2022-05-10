@@ -15,7 +15,7 @@ Empowering everyone to build reliable and efficient software
 Multiple concurrent Rust toolchains can be installed and managed via <a href="https://rustup.rs/">rustup</a>. Rust installations come with Cargo, a command line tool to manage dependencies, run tests, generate documentation, and more.
 Rust was built with safety, speed, and efficiency (productivity and control).
 
-- Compile time memory checks, guuarantees memory safety with no run time costs through ownership and borrowing (variables immutable by default)
+- Compile time memory checks, guuarantees memory safety with no run time costs through ownership and borrowing, can opt in to runtime garbage collection through reference counters(variables immutable by default)
 
 - Catching bugs at compile time and ridiculously helpful compiler errors
 - Best of two worlds from systems programming and functional/higher-order programming: Low level control and abstraction when required
