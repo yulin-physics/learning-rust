@@ -1,10 +1,32 @@
 # Rust in Action
 
+Primitive types in Rust implement Copy trait, whereas all other types have move semantics.
+
 ## Lifetime Annotations
 
 Lifetimes provide specific information to the Rust compiler about data that lives outside a function (functions that use references). Make sure input data lives as long as the function.
 
 Lifetime elision - lifetime parameters don't need to be provided usually.
+
+## Ownership
+
+Two main ways to shift ownership
+
+- through assignment
+- through a function barrier
+
+Resolve ownership issues:
+
+- Use references where full ownership is not required
+- Duplicate the value by Copy and Clone
+- Refactoring code to reduce number of long-lived objects
+- Wrap data in a type deisgned to assist with movement issues `Rc<T>` and `Arc<T>`
+
+Reference counted pointers enable shared ownership of data. `Rc<T>` implements Clone. Every call to clone() increments an internal counter, every Drop decrements the counter. When the internal counter reaches zero, the original instance is freed.
+
+`Rc<T>` does not allow mutation, need `Rc<RefCell<T>>` to perform interior mutability. An object with interior mutability presents an immutable facade, while internal values are being modified.
+
+`Rc<T>` is not threadsafe. Replace `Rc<T>` with `Arc<T>` for atomic reference counter and `Rc<RefCell<T>>` with `Arc<Mutex<T>>`.
 
 ## Generics
 
