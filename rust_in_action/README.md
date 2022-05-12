@@ -61,3 +61,7 @@ static mut ERROR
 Need to wrap static lifetime global vaiables in `unsafe` block when accessing.
 
 Alternatively, make use of Rust `Result` return type. Let functions take ownership of the argument and return in Ok(T).
+
+---
+
+Text files are just binary files that happen to follow a consistent mapping between bit strings and characters. This mapping is called an encoding.
