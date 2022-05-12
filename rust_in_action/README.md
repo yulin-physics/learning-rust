@@ -76,3 +76,5 @@ Each floating point number is laid out in memory as scientific notation. A float
 - a sign bit
 - an exponent
 - a mantissa, or significand
+
+Exponent bias for 32bit floats is 127 by standard. Exponent is stored as an unsigned value which is suitable for comparison, and when being interpreted it is converted into an exponent within a signed range by subtracting the bias.
