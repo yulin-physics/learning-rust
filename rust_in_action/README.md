@@ -62,6 +62,17 @@ Need to wrap static lifetime global vaiables in `unsafe` block when accessing.
 
 Alternatively, make use of Rust `Result` return type. Let functions take ownership of the argument and return in Ok(T).
 
----
+## Integer Overflow
 
 Text files are just binary files that happen to follow a consistent mapping between bit strings and characters. This mapping is called an encoding.
+
+Integer Overflow: integers are fixed size
+Endianness: CPU specific, reading byte sequences from left-to-right or right-to-left. Computer's prefernce for layout of individual bits is known as its bit numbering or bit endianness. MSB can refer to bother most significant bit (bit numbering) and most significant byte (endianness).
+
+## Floating point
+
+Each floating point number is laid out in memory as scientific notation. A floating point value is a container with three fields:
+
+- a sign bit
+- an exponent
+- a mantissa, or significand
