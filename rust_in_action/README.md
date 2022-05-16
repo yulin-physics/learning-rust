@@ -81,6 +81,8 @@ Each floating point number is laid out in memory as scientific notation. A float
 
 Exponent bias for 32bit floats is 127 by standard. Exponent is stored as an unsigned value which is suitable for comparison, and when being interpreted it is converted into an exponent within a signed range by subtracting the bias.
 
+
 You can represent decimal numbers in a single byte with a **fixed-point number** format (decimal place does not move to dynamically accomodate different ranges), e.g. "Q format".
 
 Q7 is intended as a storage and data transfer type only. Its most important role is to be able to be converted to and from floating point types.
+
