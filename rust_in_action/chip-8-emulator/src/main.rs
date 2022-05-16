@@ -1,5 +1,5 @@
-mod multi_adder;
+mod functions_are_data;
 
 fn main() {
-    multi_adder::run();
+    functions_are_data::run();
 }
