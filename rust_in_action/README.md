@@ -1,5 +1,7 @@
 # Rust in Action
 
+Instructions in a language are also just bytes of usize. A computer can emulate other computers' instruction sets by emulating them in software, i.e. we can construct a CPU with code.
+
 Primitive types in Rust implement Copy trait, whereas all other types have move semantics.
 
 ## Lifetime Annotations
