@@ -231,6 +231,7 @@ tree -d -L 1 target/doc/
 - <a href="https://developer.mozilla.org/en-US/docs/WebAssembly/Rust_to_wasm">WebAssembly</a>
 - <a href="https://github.com/rust-lang/rustlings">Rustlings - Small exercises</a>
 - <a href="https://doc.rust-lang.org/edition-guide/introduction.html">The Edition Guide</a>
+- <a href="https://www.cs.brandeis.edu/~cs146a/rust/doc-02-21-2015/book/">Michtom School of Computer Science Rust Book</a>
 
 [Memory Safety Explained](memory/README.md)
 
