@@ -39,3 +39,5 @@ Rust does not allow borrowing a reference and a mut reference at the same time, 
 <a href="https://www.reddit.com/r/rust/comments/px2hp1/what_is_the_difference_between_a_borrow_and_a/">What is the difference between a borrow and a pointer?</a>
 
 <a href="https://manishearth.github.io/blog/2015/05/17/the-problem-with-shared-mutability/">The Problem With Single-threaded Shared Mutability</a>
+
+<a href="https://peterlyons.com/problog/2017/12/rust-converting-bytes-chars-and-strings/">Rust converting bytes chars and strings</a>
