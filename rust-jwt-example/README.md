@@ -1,0 +1,1 @@
+https://blog.logrocket.com/jwt-authentication-in-rust/
