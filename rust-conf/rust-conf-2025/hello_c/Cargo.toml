@@ -1,0 +1,11 @@
+[package]
+name = "hello_c"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+
+# helpers for compiling executable and not conflating the final binary
+[build-dependencies]
+cc = "1.0"
+bindgen = "0"

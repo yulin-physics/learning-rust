@@ -1,0 +1,16 @@
+[book]
+authors = ["Herbert Wolverson"]
+language = "en"
+multilingual = false
+src = "src"
+title = "Rust Nations: Rust and C/C++ FFI"
+edition=2021
+
+[output.html.playground]
+editable = true
+
+[rust]
+edition = "2021"
+
+[output.html]
+default-theme = "light"

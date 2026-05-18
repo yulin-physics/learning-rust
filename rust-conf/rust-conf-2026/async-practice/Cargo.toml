@@ -1,0 +1,26 @@
+[package]
+name = "async-practice"
+version = "0.1.0"
+edition = "2024"
+
+[[bin]]
+name = "async"
+path = "src/async.rs"
+
+[[bin]]
+name = "channel"
+path = "src/channel.rs"
+
+[[bin]]
+name = "actor"
+path = "src/actor.rs"
+
+[[bin]]
+name = "axum"
+path = "src/axum.rs"
+
+[dependencies]
+axum = "0.8.8"
+futures = "0.3.32"
+serde = { version = "1.0.228", features = ["derive"] }
+tokio = { version = "1.37", features = ["full"] }
